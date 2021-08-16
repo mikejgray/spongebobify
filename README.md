@@ -2,8 +2,8 @@
 
 ## Usage
 
-Input: Make some text sarcastic!
-Output: mAkE soMe TExT sARcAsTIC!
+Input: "Make some text sarcastic\!"
+Output: "mAkE soMe TExT sARcAsTIC!"
 
 ## PyPi Link
 
