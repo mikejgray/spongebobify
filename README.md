@@ -1,4 +1,10 @@
 # Spongebobify
 
-Make some text sarcastic!
-mAkE soMe TExT sARcAsTIC!
+## Usage
+
+Input: Make some text sarcastic!
+Output: mAkE soMe TExT sARcAsTIC!
+
+## PyPi Link
+
+[https://pypi.org/project/spongebobify/](https://pypi.org/project/spongebobify/)
