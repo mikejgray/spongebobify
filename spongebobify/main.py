@@ -1,19 +1,36 @@
+import argparse
+import importlib.metadata
 from random import choice
-import typer
-
-app = typer.Typer()
 
 
-def aye_aye(text: str):
-    return "".join(choice((str.upper, str.lower))(l) for l in text)
+__version__ = importlib.metadata.version("spongebobify")
 
 
-@app.callback()
-def callback():
-    return
+def aye_aye(message: str) -> str:
+    return "".join(choice((str.upper, str.lower))(letter) for letter in message)
 
 
-@app.command()
-def text(text: str = typer.Argument(..., help="The text to make sArCAstIC. If using spaces, wrap in quotes.")):
-    """Make your TEXT sO sArCAstIC"""
-    typer.echo(aye_aye(text))
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        prog="spongebobify",
+        description="Are ya ready kids? aYE AyE! You can now make your text...sARcaStiC!",
+    )
+    parser.add_argument(
+        "text",
+        nargs="+",
+        help="The text to make sArCAstIC.",
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"spongebobify version: {__version__}",
+    )
+
+    args = parser.parse_args()
+
+    full_text = " ".join(args.text)
+    print(aye_aye(full_text))
+
+
+if __name__ == "__main__":
+    main()

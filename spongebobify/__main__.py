@@ -1,3 +1,5 @@
-from .main import app
+from .main import main
 
-app(prog_name="spongebobify")
+
+if __name__ == "__main__":
+    main()
